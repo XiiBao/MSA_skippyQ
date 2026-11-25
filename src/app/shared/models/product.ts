@@ -3,6 +3,8 @@ export class Product {
   price: number;
   image: string;
   id: string;
+  category: string | undefined;
+  vegetarian: Boolean | undefined;
 
   constructor(name: string, price: number, image: string, id?: string) {
     this.name = name;

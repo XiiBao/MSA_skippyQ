@@ -28,4 +28,18 @@ export class ProductService {
       this.products.splice(index, 1);
     }
   }
+
+  add(p: Product) {
+    this.products.push(p);
+  }
+
+  update(p: Product) {
+    const index = this.products.findIndex(item => item.id == p.id);
+    if (index >= 0) {
+      const prod = this.products[index];
+      //update all the fields execpt for id and image
+      prod.name = p.name;
+      prod.price = p.price;
+    }
+  }
 }
